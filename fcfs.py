@@ -26,3 +26,9 @@ for proc in processes:
     proc.WT = proc.TAT - proc.burstTime
 
 pprint.pprint(processes)
+
+avgSum = sum([a.WT for a in processes]) / len(processes)
+print("Average Waiting time is:", avgSum)
+
+
+

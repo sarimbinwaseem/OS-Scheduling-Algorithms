@@ -32,8 +32,10 @@ def doitnow(processes) -> None:
     
     totalProcesses.extend(processes)
 
-t1 = threading.Thread(target = doitnow, args=(processes[:5],))
-t2 = threading.Thread(target = doitnow, args=(processes[5:],))
+mid = len(processes) // 2 
+
+t1 = threading.Thread(target = doitnow, args=(processes[:mid],))
+t2 = threading.Thread(target = doitnow, args=(processes[mid:],))
 
 t1.start()
 t2.start()
